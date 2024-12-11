@@ -1,0 +1,1 @@
+Using [this](https://www.youtube.com/playlist?list=PLG6SdLSnBhdWj797VAEvABNYIBEaVQnfF) youtube series to learn the basics about Angular
