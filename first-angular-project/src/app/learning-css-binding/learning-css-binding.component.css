@@ -1,0 +1,25 @@
+.active {
+  background-color: green;
+}
+
+.active-border {
+  border: 2px solid yellow;
+}
+
+.inactive {
+  background-color: brown;
+}
+
+.inactive-border {
+  border: 2px solid blue;
+}
+
+.banana {
+  background-color: yellow;
+  border: 2px solid brown;
+}
+
+.activeTest {
+  background-color: green;
+  border: 2px solid purple;
+}

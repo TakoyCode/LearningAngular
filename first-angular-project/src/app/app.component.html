@@ -1,34 +1,10 @@
 <h1>{{ title }}</h1>
 <p>{{ num + 1 }}</p>
 
-<!-- String interpolation -->
-<!-- <img src="{{imgURL}}" alt="" style="width: 250px;"> -->
-
-<!-- Property binding -->
-<img [src]="imgURL" alt="" style="width: 250px;">
-<br />
-
-<!-- this is a bad example of it cause normaly the html disabled attribute can't be controlled via a bool -->
-<button disabled="{{isDisabled}}">Disabled using string interpolation</button>
-<br />
-<button [disabled]="isDisabled">Disabled using property binding</button>
-
-
-<!-- class Binding -->
-<br />
-<button [class.active]="isActive" [class.active-border]="isActive" [class.inactive]="!isActive"
-    [class.inactive-border]="!isActive">Click me</button>
-
-<br />
-<button [style.border]="'2px solid '+ borderColor">Border me :D</button>
-
-<br />
-<button [class.banana]="fruitName == 'banana'">Fruit button</button>
-
-
-
 <app-navbar></app-navbar>
 
 <app-header></app-header>
+
+<app-learning-css-binding></app-learning-css-binding>
 
 <router-outlet></router-outlet>
