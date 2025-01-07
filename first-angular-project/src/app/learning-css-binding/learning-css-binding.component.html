@@ -1,41 +1,54 @@
-<!-- String interpolation -->
-<!-- <img src="{{imgURL}}" alt="" style="width: 250px;"> -->
+<div [className]="'container'">
+  <!-- String interpolation -->
+  <!-- <img src="{{imgURL}}" alt="" style="width: 250px;"> -->
 
-<!-- Property binding -->
-<img [src]="imgURL" alt="" style="width: 250px" />
-<br />
+  <!-- Property binding -->
+  <img [src]="imgURL" alt="" style="width: 250px" />
 
-<!-- this is a bad example of it cause normaly the html disabled attribute can't be controlled via a bool -->
-<button disabled="{{ isDisabled }}">Disabled using string interpolation</button>
-<br />
-<button [disabled]="isDisabled">Disabled using property binding</button>
+  <!-- this is a bad example of it cause normaly the html disabled attribute can't be controlled via a bool -->
+  <button disabled="{{ isDisabled }}">
+    Disabled using string interpolation
+  </button>
+  <button [disabled]="isDisabled">Disabled using property binding</button>
 
-<!-- class binding -->
-<br />
-<button
-  [class.active]="isActive"
-  [class.active-border]="isActive"
-  [class.inactive]="!isActive"
-  [class.inactive-border]="!isActive"
->
-  Click me
-</button>
-<br />
-<button [class.banana]="fruitName == 'banana'">Fruit button</button>
+  <!-- class binding -->
+  <button
+    [class.active]="isActive"
+    [class.active-border]="isActive"
+    [class.inactive]="!isActive"
+    [class.inactive-border]="!isActive"
+  >
+    Click me
+  </button>
+  <button [class.banana]="fruitName == 'banana'">Fruit button</button>
 
-<!-- style binding -->
-<br />
-<button [style.border]="'2px solid ' + borderColor">Border me :D</button>
-<br />
+  <!-- style binding -->
+  <button [style.border]="'2px solid ' + borderColor">Border me :D</button>
 
-<!-- style.property accepts both normal css property names and camel case versions of it  -->
-<button [style.background-color]="isActive ? 'red' : 'blue'">Click</button>
-<button
-  [style.backgroundColor]="isActive ? 'red' : 'blue'"
-  [style.border]="isActive ? '2px solid green' : '2px solid cyan'"
->
-  Click
-</button>
+  <!-- style.property accepts both normal css property names and camel case versions of it  -->
+  <div>
+    <button [style.background-color]="isActive ? 'red' : 'blue'">Click</button>
+    <button
+      [style.backgroundColor]="isActive ? 'red' : 'blue'"
+      [style.border]="isActive ? '2px solid green' : '2px solid cyan'"
+    >
+      Click
+    </button>
+  </div>
 
-<br />
-<button [class.activeTest]="isActive">Class Button</button>
+  <button [class.activeTest]="isActive">Class Button</button>
+
+  <!-- Event binding -->
+  <button (click)="buttonClick()">Click me</button>
+
+  <button (mouseover)="buttonHover()">Hover me</button>
+
+  <input (keyup)="keyPressed()" type="text" />
+
+  <!-- Event Filtering -->
+  <!-- JS approach -->
+  <input (keyup)="keyEnterPressed($event)" type="text" />
+
+  <!-- Angular approach -->
+  <input (keyup.enter)="keyupFiltering()" type="text" />
+</div>
