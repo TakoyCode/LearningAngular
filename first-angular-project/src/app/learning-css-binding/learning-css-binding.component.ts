@@ -36,4 +36,12 @@ export class LearningCSSBindingComponent {
   keyupFiltering() {
     console.log('Keyup event filtering');
   }
+
+  keyupFilteringWithTemplateVar(user: HTMLInputElement) {
+    // user input element
+    console.log(user);
+
+    console.log(user.value);
+    console.log(user.id);
+  }
 }

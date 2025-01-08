@@ -45,10 +45,22 @@
 
   <input (keyup)="keyPressed()" type="text" />
 
-  <!-- Event Filtering -->
-  <!-- JS approach -->
-  <input (keyup)="keyEnterPressed($event)" type="text" />
+  <div>
+    <!-- Event Filtering -->
+    <!-- JS approach -->
+    <input (keyup)="keyEnterPressed($event)" type="text" />
 
-  <!-- Angular approach -->
-  <input (keyup.enter)="keyupFiltering()" type="text" />
+    <!-- Angular approach -->
+    <input (keyup.enter)="keyupFiltering()" type="text" />
+  </div>
+
+  <!-- Template variable -->
+  <input
+    (keyup.enter)="keyupFilteringWithTemplateVar(user)"
+    type="text"
+    #user
+    id="userInput"
+  />
+
+  <!-- Data Binding -->
 </div>
