@@ -62,5 +62,17 @@
     id="userInput"
   />
 
-  <!-- Data Binding -->
+  <!-- 2 Way Data Binding -->
+  <div>username: {{ userName }}</div>
+
+  <!-- Vanilla way -->
+  <input
+    type="text"
+    (keyup)="changeUserName(userNameInput.value)"
+    #userNameInput
+    [value]="userName"
+  />
+
+  <!-- Angular ngForms way -->
+  <input type="text" [(ngModel)]="userName" />
 </div>

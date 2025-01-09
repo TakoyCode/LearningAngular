@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { EventType } from '@angular/router';
 
 @Component({
   selector: 'app-learning-css-binding',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './learning-css-binding.component.html',
   styleUrl: './learning-css-binding.component.css',
 })
@@ -14,6 +15,8 @@ export class LearningCSSBindingComponent {
   isActive: boolean = true;
   borderColor: string = 'red';
   fruitName: string = 'banana';
+
+  userName: string = 'John Doe';
 
   buttonClick() {
     console.log('Clicked');
@@ -40,8 +43,11 @@ export class LearningCSSBindingComponent {
   keyupFilteringWithTemplateVar(user: HTMLInputElement) {
     // user input element
     console.log(user);
-
     console.log(user.value);
     console.log(user.id);
+  }
+
+  changeUserName(newUserName: string) {
+    this.userName = newUserName;
   }
 }
