@@ -1,0 +1,18 @@
+<!-- Old way Angular 17 and under -->
+<h2 *ngIf="isLoggedIn; else message">{{ userName }}</h2>
+<h2 *ngIf="!isLoggedIn">User is not logged in!</h2>
+
+<ng-template #message>
+  <h2>User is not logged in! (loaded using ng-template syntax block)</h2>
+</ng-template>
+
+<!-- New way Angular 18 -->
+@if (isLoggedIn) {
+  <h3>{{ userName }}</h3>
+} @else {
+  <h3>User is not logged in! (loaded using else syntax block)</h3>
+}
+
+@if (!isLoggedIn) {
+  <h3>User is not logged in! (loaded using if syntax block)</h3>
+}
